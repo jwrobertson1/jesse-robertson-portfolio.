@@ -8,547 +8,99 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black: #0a0a0a;
-      --white: #f5f4f0;
-      --green: #1a7a4a;
-      --green-light: #2aad6a;
-      --orange: #e8621a;
-      --purple: #6b3fa0;
-      --gray: #6b6b6b;
-      --border: rgba(245,244,240,0.1);
+      --black: #0a0a0a; --white: #f5f4f0; --green: #1a7a4a; --green-light: #2aad6a;
+      --orange: #e8621a; --purple: #6b3fa0; --gray: #6b6b6b; --border: rgba(245,244,240,0.1);
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--black);
-      color: var(--white);
-      overflow-x: hidden;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 48px;
-      background: rgba(10,10,10,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -0.5px;
-    }
-
+    body { font-family: "DM Sans", sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 20px 48px; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: "Syne", sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; }
     .nav-logo span { color: var(--green-light); }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 32px;
-    }
-
-    nav a {
-      color: rgba(245,244,240,0.6);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: color 0.2s;
-    }
-
+    nav ul { list-style: none; display: flex; gap: 32px; }
+    nav a { color: rgba(245,244,240,0.6); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; transition: color 0.2s; }
     nav a:hover { color: var(--white); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 120px 48px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(26,122,74,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -10%;
-      left: -5%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(107,63,160,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--green-light);
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.1s;
-    }
-
-    .hero-name {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -3px;
-      margin-bottom: 32px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.2s;
-    }
-
-    .hero-name .line2 {
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(245,244,240,0.3);
-    }
-
-    .hero-desc {
-      max-width: 540px;
-      font-size: 1.1rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: rgba(245,244,240,0.65);
-      margin-bottom: 48px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.3s;
-    }
-
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 48px 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(26,122,74,0.15) 0%, transparent 70%); pointer-events: none; }
+    .hero::after { content: ""; position: absolute; bottom: -10%; left: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(107,63,160,0.1) 0%, transparent 70%); pointer-events: none; }
+    .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--green-light); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.1s; }
+    .hero-name { font-family: "Syne", sans-serif; font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 800; line-height: 0.95; letter-spacing: -3px; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.2s; }
+    .hero-name .line2 { color: transparent; -webkit-text-stroke: 1px rgba(245,244,240,0.3); }
+    .hero-desc { max-width: 540px; font-size: 1.1rem; font-weight: 300; line-height: 1.7; color: rgba(245,244,240,0.65); margin-bottom: 48px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.3s; }
     .hero-desc strong { color: var(--white); font-weight: 500; }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 48px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.4s;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      padding: 6px 14px;
-      border-radius: 100px;
-      border: 1px solid var(--border);
-      color: rgba(245,244,240,0.6);
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.5s;
-    }
-
-    .btn-primary {
-      background: var(--green);
-      color: var(--white);
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: background 0.2s, transform 0.2s;
-      display: inline-block;
-    }
-
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 48px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.4s; }
+    .tag { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.5px; padding: 6px 14px; border-radius: 100px; border: 1px solid var(--border); color: rgba(245,244,240,0.6); }
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.6s ease forwards 0.5s; }
+    .btn-primary { background: var(--green); color: var(--white); text-decoration: none; padding: 14px 28px; border-radius: 6px; font-size: 0.9rem; font-weight: 600; transition: background 0.2s, transform 0.2s; display: inline-block; }
     .btn-primary:hover { background: var(--green-light); transform: translateY(-2px); }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--white);
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      border: 1px solid var(--border);
-      transition: border-color 0.2s, transform 0.2s;
-      display: inline-block;
-    }
-
+    .btn-secondary { background: transparent; color: var(--white); text-decoration: none; padding: 14px 28px; border-radius: 6px; font-size: 0.9rem; font-weight: 500; border: 1px solid var(--border); transition: border-color 0.2s, transform 0.2s; display: inline-block; }
     .btn-secondary:hover { border-color: rgba(245,244,240,0.4); transform: translateY(-2px); }
-
-    .hero-stats {
-      position: absolute;
-      bottom: 48px;
-      right: 48px;
-      display: flex;
-      gap: 40px;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.6s;
-    }
-
+    .hero-stats { position: absolute; bottom: 48px; right: 48px; display: flex; gap: 40px; opacity: 0; animation: fadeUp 0.6s ease forwards 0.6s; }
     .stat-item { text-align: right; }
-    .stat-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--green-light);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.7rem;
-      color: var(--gray);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-
-    /* SECTION BASE */
-    section {
-      padding: 100px 48px;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--green-light);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
-
-    .section-sub {
-      font-size: 1rem;
-      color: rgba(245,244,240,0.55);
-      max-width: 500px;
-      line-height: 1.7;
-      margin-bottom: 60px;
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .about-text p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: rgba(245,244,240,0.7);
-      margin-bottom: 20px;
-    }
-
+    .stat-num { font-family: "Syne", sans-serif; font-size: 2rem; font-weight: 800; color: var(--green-light); line-height: 1; }
+    .stat-label { font-size: 0.7rem; color: var(--gray); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+    section { padding: 100px 48px; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--green-light); margin-bottom: 16px; }
+    .section-title { font-family: "Syne", sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; letter-spacing: -1.5px; line-height: 1.05; margin-bottom: 20px; }
+    .section-sub { font-size: 1rem; color: rgba(245,244,240,0.55); max-width: 500px; line-height: 1.7; margin-bottom: 60px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .about-text p { font-size: 1rem; line-height: 1.8; color: rgba(245,244,240,0.7); margin-bottom: 20px; }
     .about-text p strong { color: var(--white); }
-
-    .about-skills {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .skill-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-name {
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .skill-tags {
-      display: flex;
-      gap: 6px;
-    }
-
-    .skill-tag {
-      font-size: 0.7rem;
-      padding: 3px 10px;
-      border-radius: 100px;
-      background: rgba(245,244,240,0.07);
-      color: rgba(245,244,240,0.5);
-    }
-
-    /* PROJECTS */
+    .about-skills { display: flex; flex-direction: column; gap: 20px; }
+    .skill-row { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .skill-name { font-size: 0.85rem; font-weight: 500; }
+    .skill-tags { display: flex; gap: 6px; }
+    .skill-tag { font-size: 0.7rem; padding: 3px 10px; border-radius: 100px; background: rgba(245,244,240,0.07); color: rgba(245,244,240,0.5); }
     #projects { background: #0d0d0d; }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-    }
-
-    .project-card {
-      background: #111;
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-      transition: background 0.3s;
-      cursor: default;
-    }
-
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .project-card { background: #111; padding: 40px; position: relative; overflow: hidden; transition: background 0.3s; cursor: default; }
     .project-card:hover { background: #161616; }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px;
-      height: 0;
-      background: var(--accent);
-      transition: height 0.4s ease;
-    }
-
+    .project-card::before { content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--accent); transition: height 0.4s ease; }
     .project-card:hover::before { height: 100%; }
-
     .project-card.green { --accent: var(--green-light); }
     .project-card.orange { --accent: var(--orange); }
     .project-card.purple { --accent: var(--purple); }
     .project-card.blue { --accent: #2a7ae2; }
-
-    .project-num {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: var(--accent);
-      margin-bottom: 20px;
-    }
-
-    .project-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-    }
-
-    .project-subtitle {
-      font-size: 0.8rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
-
-    .project-desc {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      color: rgba(245,244,240,0.55);
-      margin-bottom: 24px;
-    }
-
-    .project-features {
-      list-style: none;
-      margin-bottom: 28px;
-    }
-
-    .project-features li {
-      font-size: 0.8rem;
-      color: rgba(245,244,240,0.5);
-      padding: 5px 0;
-      padding-left: 16px;
-      position: relative;
-    }
-
-    .project-features li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 0.7rem;
-    }
-
-    .project-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 28px;
-    }
-
-    .stack-tag {
-      font-size: 0.68rem;
-      padding: 3px 8px;
-      border-radius: 3px;
-      background: rgba(245,244,240,0.06);
-      color: rgba(245,244,240,0.4);
-      font-family: 'DM Mono', monospace;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 12px;
-    }
-
-    .project-link {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 7px 16px;
-      border-radius: 4px;
-      transition: background 0.2s, color 0.2s;
-      opacity: 0.8;
-    }
-
-    .project-link:hover {
-      background: var(--accent);
-      color: var(--black);
-      opacity: 1;
-    }
-
-    /* BACKGROUND */
+    .project-num { font-family: "Syne", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; color: var(--accent); margin-bottom: 20px; }
+    .project-title { font-family: "Syne", sans-serif; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .project-subtitle { font-size: 0.8rem; color: var(--accent); font-weight: 500; margin-bottom: 16px; letter-spacing: 0.5px; }
+    .project-desc { font-size: 0.88rem; line-height: 1.7; color: rgba(245,244,240,0.55); margin-bottom: 24px; }
+    .project-features { list-style: none; margin-bottom: 28px; }
+    .project-features li { font-size: 0.8rem; color: rgba(245,244,240,0.5); padding: 5px 0 5px 16px; position: relative; }
+    .project-features li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; }
+    .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 28px; }
+    .stack-tag { font-size: 0.68rem; padding: 3px 8px; border-radius: 3px; background: rgba(245,244,240,0.06); color: rgba(245,244,240,0.4); }
+    .project-links { display: flex; gap: 12px; }
+    .project-link { font-size: 0.8rem; font-weight: 600; text-decoration: none; color: var(--accent); border: 1px solid var(--accent); padding: 7px 16px; border-radius: 4px; transition: background 0.2s, color 0.2s; opacity: 0.8; }
+    .project-link:hover { background: var(--accent); color: var(--black); opacity: 1; }
     #background { background: var(--black); }
-
-    .bg-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-bottom: 60px;
-    }
-
-    .bg-card {
-      background: #0d0d0d;
-      padding: 32px;
-    }
-
-    .bg-icon {
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-    }
-
-    .bg-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .bg-text {
-      font-size: 0.82rem;
-      color: rgba(245,244,240,0.5);
-      line-height: 1.7;
-    }
-
-    /* CONTACT */
-    #contact {
-      background: #0d0d0d;
-      text-align: center;
-    }
-
-    .contact-inner {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: rgba(245,244,240,0.6);
-      font-size: 0.85rem;
-      font-weight: 500;
-      padding: 12px 20px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
-    .contact-link:hover {
-      color: var(--white);
-      border-color: rgba(245,244,240,0.3);
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 32px 48px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    footer p {
-      font-size: 0.78rem;
-      color: var(--gray);
-    }
-
-    /* DIVIDER */
-    .divider {
-      width: 60px;
-      height: 2px;
-      background: var(--green-light);
-      margin-bottom: 40px;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* RESPONSIVE */
+    .bg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-bottom: 60px; }
+    .bg-card { background: #0d0d0d; padding: 32px; }
+    .bg-icon { font-size: 1.5rem; margin-bottom: 16px; }
+    .bg-title { font-family: "Syne", sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .bg-text { font-size: 0.82rem; color: rgba(245,244,240,0.5); line-height: 1.7; }
+    #contact { background: #0d0d0d; text-align: center; }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-links { display: flex; justify-content: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
+    .contact-link { display: flex; align-items: center; gap: 8px; text-decoration: none; color: rgba(245,244,240,0.6); font-size: 0.85rem; font-weight: 500; padding: 12px 20px; border: 1px solid var(--border); border-radius: 6px; transition: color 0.2s, border-color 0.2s; }
+    .contact-link:hover { color: var(--white); border-color: rgba(245,244,240,0.3); }
+    footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    footer p { font-size: 0.78rem; color: var(--gray); }
+    .divider { width: 60px; height: 2px; background: var(--green-light); margin-bottom: 40px; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      nav ul { display: none; }
+      nav { padding: 16px 24px; } nav ul { display: none; }
       .hero { padding: 100px 24px 80px; }
       .hero-stats { position: static; margin-top: 48px; justify-content: flex-start; }
       section { padding: 70px 24px; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .bg-grid { grid-template-columns: 1fr; }
+      .about-grid, .projects-grid, .bg-grid { grid-template-columns: 1fr; }
+      .about-grid { gap: 40px; }
       footer { flex-direction: column; gap: 12px; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">Jesse <span>Robertson</span></div>
   <ul>
@@ -559,15 +111,11 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">AI Builder · Operations Leader · Product Thinker</div>
-  <h1 class="hero-name">
-    Jesse<br>
-    <span class="line2">Robertson</span>
-  </h1>
+  <div class="hero-eyebrow">AI Builder &middot; Operations Leader &middot; Product Thinker</div>
+  <h1 class="hero-name">Jesse<br><span class="line2">Robertson</span></h1>
   <p class="hero-desc">
-    I build <strong>AI-powered tools</strong> that solve real operational problems —
+    I build <strong>AI-powered tools</strong> that solve real operational problems &mdash;
     then ship them. 17 years running fleets and operations gave me the domain expertise.
     A UT Austin dev cert and a relentless builder mentality did the rest.
   </p>
@@ -575,7 +123,7 @@
     <span class="tag">Fleet Operations</span>
     <span class="tag">AI Product Development</span>
     <span class="tag">DOT / HOS Compliance</span>
-    <span class="tag">HR & Compliance Tools</span>
+    <span class="tag">HR &amp; Compliance Tools</span>
     <span class="tag">Full Stack</span>
     <span class="tag">Google Apps Script</span>
   </div>
@@ -584,302 +132,155 @@
     <a href="#contact" class="btn-secondary">Get in Touch</a>
   </div>
   <div class="hero-stats">
-    <div class="stat-item">
-      <div class="stat-num">17+</div>
-      <div class="stat-label">Years Ops</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">4</div>
-      <div class="stat-label">Live Products</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">9</div>
-      <div class="stat-label">Terminals Managed</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">17+</div><div class="stat-label">Years Ops</div></div>
+    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Live Products</div></div>
+    <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Terminals Managed</div></div>
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <div class="section-label">About</div>
   <div class="divider"></div>
   <div class="about-grid">
     <div class="about-text">
-      <p>
-        I spent <strong>10 years managing dispatch and fleet operations</strong> at Solar Transport —
-9 terminals, 7 states, up to 150 drivers. I reduced service failures from
-        800+ per year to under 100 and built a safety culture that earned 19 consecutive
-        fleet safety awards.
-      </p>
-      <p>
-        Along the way I started solving operational problems with AI before most people
-        knew what a prompt was. I built HR workflows, compliance systems, and reporting
-        tools that replaced entire headcount. Then I decided to build products out of it.
-      </p>
-      <p>
-        Under <strong>AI Business Systems</strong>, I've shipped HR Shield, DOT Shield,
-        and RepairFlow — three AI-powered tools addressing real SMB pain points, all
-        built and deployed solo. The DOT Shield concept includes a Phase 2 ELD integration
-        that gives dispatchers real-time HOS answers in plain English — a product I
-        believe has serious potential in the fleet management space.
-      </p>
-      <p>
-       I hold a Full Stack certificate from UT Austin and build with Claude API, JavaScript, Node.js, Vercel, and Google Apps Script.
-      </p>
+      <p>I spent <strong>10 years managing dispatch and fleet operations</strong> at Solar Transport &mdash; 9 terminals, 7 states, up to 150 drivers. I reduced service failures from 800+ per year to under 100 and built a safety culture that earned 19 consecutive fleet safety awards.</p>
+      <p>Along the way I started solving operational problems with AI before most people knew what a prompt was. I built HR workflows, compliance systems, and reporting tools that replaced entire headcount. Then I decided to build products out of it.</p>
+      <p>Under <strong>AI Business Systems</strong>, I&rsquo;ve shipped HR Shield, DOT Shield, and RepairFlow &mdash; three AI-powered tools addressing real SMB pain points, all built and deployed solo. The DOT Shield concept includes a Phase 2 ELD integration that gives dispatchers real-time HOS answers in plain English &mdash; a product I believe has serious potential in the fleet management space.</p>
+      <p>I hold a Full Stack certificate from UT Austin and build with Claude API, JavaScript, Node.js, Vercel, and Google Apps Script.</p>
     </div>
     <div class="about-skills">
-      <div class="skill-row">
-        <div class="skill-name">Fleet & Dispatch Operations</div>
-        <div class="skill-tags">
-          <span class="skill-tag">12 yrs</span>
-          <span class="skill-tag">Expert</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">AI Application Development</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Claude API</span>
-          <span class="skill-tag">Shipped</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">DOT / HOS Compliance</div>
-        <div class="skill-tags">
-          <span class="skill-tag">FMCSA</span>
-          <span class="skill-tag">Expert</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">Full Stack Development</div>
-        <div class="skill-tags">
-          <span class="skill-tag">JS</span>
-          <span class="skill-tag">Node</span>
-          <span class="skill-tag">Vercel</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">Product Development</div>
-        <div class="skill-tags">
-          <span class="skill-tag">0→1</span>
-          <span class="skill-tag">Stripe</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">Google Apps Script / Sheets API</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Advanced</span>
-        </div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-name">Safety & Compliance Management</div>
-        <div class="skill-tags">
-          <span class="skill-tag">19 Awards</span>
-          <span class="skill-tag">DOT/OSHA</span>
-        </div>
-      </div>
+      <div class="skill-row"><div class="skill-name">Fleet &amp; Dispatch Operations</div><div class="skill-tags"><span class="skill-tag">10 yrs</span><span class="skill-tag">Expert</span></div></div>
+      <div class="skill-row"><div class="skill-name">AI Application Development</div><div class="skill-tags"><span class="skill-tag">Claude API</span><span class="skill-tag">Shipped</span></div></div>
+      <div class="skill-row"><div class="skill-name">DOT / HOS Compliance</div><div class="skill-tags"><span class="skill-tag">FMCSA</span><span class="skill-tag">Expert</span></div></div>
+      <div class="skill-row"><div class="skill-name">Full Stack Development</div><div class="skill-tags"><span class="skill-tag">JS</span><span class="skill-tag">Node</span><span class="skill-tag">Vercel</span></div></div>
+      <div class="skill-row"><div class="skill-name">Product Development</div><div class="skill-tags"><span class="skill-tag">0&rarr;1</span><span class="skill-tag">Stripe</span></div></div>
+      <div class="skill-row"><div class="skill-name">Google Apps Script / Sheets API</div><div class="skill-tags"><span class="skill-tag">Advanced</span></div></div>
+      <div class="skill-row"><div class="skill-name">Safety &amp; Compliance Management</div><div class="skill-tags"><span class="skill-tag">19 Awards</span><span class="skill-tag">DOT/OSHA</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="section-label">Projects</div>
-  <div class="section-title">Shipped & Live</div>
+  <div class="section-title">Shipped &amp; Live</div>
   <p class="section-sub">Four AI-powered products built and deployed solo under AI Business Systems.</p>
-
   <div class="projects-grid">
 
-    <!-- DOT Shield -->
     <div class="project-card orange">
-      <div class="project-num">01 — TRANSPORTATION</div>
+      <div class="project-num">01 &mdash; TRANSPORTATION</div>
       <div class="project-title">DOT Shield</div>
-      <div class="project-subtitle">AI-Visor for Dispatchers & Drivers</div>
-      <p class="project-desc">
-        Plain-English HOS compliance answers for everyone in a fleet operation.
-        Built on 12 years of dispatch management experience — I answered these
-        questions myself at 2AM with a driver on the phone. Now there's a tool for it.
-      </p>
+      <div class="project-subtitle">AI-Visor for Dispatchers &amp; Drivers</div>
+      <p class="project-desc">Plain-English HOS compliance answers for everyone in a fleet operation. Built on 10 years of dispatch management experience &mdash; I answered these questions myself at 2AM with a driver on the phone. Now there&rsquo;s a tool for it.</p>
       <ul class="project-features">
-        <li>Operations AI-Visor — dispatcher compliance guidance</li>
-        <li>Driver AI-Visor — HOS rules, rights & exemptions</li>
+        <li>Operations AI-Visor &mdash; dispatcher compliance guidance</li>
+        <li>Driver AI-Visor &mdash; HOS rules, rights &amp; exemptions</li>
         <li>Android APK for in-cab driver use</li>
         <li>Phase 2: Live ELD integration (Samsara API) with real-time HOS query engine</li>
         <li>Covers all FMCSA rules, exemptions, and duty status scenarios</li>
       </ul>
       <div class="project-stack">
-        <span class="stack-tag">Claude API</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">Vercel</span>
-        <span class="stack-tag">Samsara API</span>
-        <span class="stack-tag">Android APK</span>
-        <span class="stack-tag">Stripe</span>
+        <span class="stack-tag">Claude API</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Vercel</span><span class="stack-tag">Samsara API</span><span class="stack-tag">Android APK</span><span class="stack-tag">Stripe</span>
       </div>
       <div class="project-links">
-        <a href="https://dot-shield.vercel.app" target="_blank" class="project-link">Dispatcher →</a>
-        <a href="https://dot-shield.vercel.app/driver" target="_blank" class="project-link">Driver →</a>
+        <a href="https://dot-shield.vercel.app" target="_blank" class="project-link">Dispatcher &rarr;</a>
+        <a href="https://dot-shield.vercel.app/driver" target="_blank" class="project-link">Driver &rarr;</a>
       </div>
     </div>
 
-    <!-- HR Shield -->
     <div class="project-card purple">
-      <div class="project-num">02 — HR & COMPLIANCE</div>
+      <div class="project-num">02 &mdash; HR &amp; COMPLIANCE</div>
       <div class="project-title">HR Shield</div>
       <div class="project-subtitle">AI-Powered HR Advisor for Small Business</div>
-      <p class="project-desc">
-        Small businesses can't afford an HR department. They can't afford not to
-        have one either. HR Shield gives them the same guidance larger companies
-        take for granted — termination letters, unemployment responses, compliance
-        docs — in plain English, in minutes.
-      </p>
+      <p class="project-desc">Small businesses can&rsquo;t afford an HR department. They can&rsquo;t afford not to have one either. HR Shield gives them the same guidance larger companies take for granted &mdash; termination letters, unemployment responses, compliance docs &mdash; in plain English, in minutes.</p>
       <ul class="project-features">
         <li>AI-guided HR situation handling</li>
         <li>Generates ready-to-use documentation</li>
         <li>Covers terminations, write-ups, unemployment claims, OSHA postings</li>
-        <li>Freemium model — 5 free questions, then $250/month</li>
+        <li>Freemium model &mdash; 5 free questions, then $250/month</li>
         <li>Disclaimer modal and legal framing built in</li>
       </ul>
       <div class="project-stack">
-        <span class="stack-tag">Claude API</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">Vercel</span>
-        <span class="stack-tag">Stripe</span>
+        <span class="stack-tag">Claude API</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Vercel</span><span class="stack-tag">Stripe</span>
       </div>
       <div class="project-links">
-        <a href="https://hr-shield.vercel.app" target="_blank" class="project-link">Live Demo →</a>
+        <a href="https://hr-shield.vercel.app" target="_blank" class="project-link">Live Demo &rarr;</a>
       </div>
     </div>
 
-    <!-- RepairFlow -->
     <div class="project-card green">
-      <div class="project-num">03 — OPERATIONS SYSTEMS</div>
+      <div class="project-num">03 &mdash; OPERATIONS SYSTEMS</div>
       <div class="project-title">RepairFlow</div>
-      <div class="project-subtitle">Warranty & Repair Lifecycle Management</div>
-      <p class="project-desc">
-        Built and deployed at an automotive electronics repair company over several
-        months. Replaced manual warranty tracking with a complete dual-interface
-        system — customer portal and internal staff tools — connected by a custom
-        API layer and Google Sheets backend.
-      </p>
+      <div class="project-subtitle">Warranty &amp; Repair Lifecycle Management</div>
+      <p class="project-desc">Built and deployed at an automotive electronics repair company over several months. Replaced manual warranty tracking with a complete dual-interface system &mdash; customer portal and internal staff tools &mdash; connected by a custom API layer and Google Sheets backend.</p>
       <ul class="project-features">
         <li>Customer portal with QR code access from physical warranty paperwork</li>
         <li>Barcode sticker printing and scanning at each workstation</li>
-        <li>Intake → Production → QC workflow with internal warranty # assignment</li>
+        <li>Intake &rarr; Production &rarr; QC workflow with internal warranty # assignment</li>
         <li>Automated customer email confirmations and status updates</li>
-        <li>Analytics dashboard — technician performance, product quality, claim age</li>
+        <li>Analytics dashboard &mdash; technician performance, product quality, claim age</li>
         <li>Walk-in slip with printable unit and vehicle dropoff forms</li>
       </ul>
       <div class="project-stack">
-        <span class="stack-tag">Node.js</span>
-        <span class="stack-tag">Google Apps Script</span>
-        <span class="stack-tag">Sheets API</span>
-        <span class="stack-tag">Nodemailer</span>
-        <span class="stack-tag">Render</span>
-        <span class="stack-tag">REST API</span>
+        <span class="stack-tag">Node.js</span><span class="stack-tag">Google Apps Script</span><span class="stack-tag">Sheets API</span><span class="stack-tag">Nodemailer</span><span class="stack-tag">Render</span><span class="stack-tag">REST API</span>
       </div>
       <div class="project-links">
-        <a href="https://repair-lifecycle-demo.onrender.com/analytics.html" target="_blank" class="project-link">Analytics →</a>
-        <a href="https://repair-lifecycle-demo.onrender.com/internal/intake" target="_blank" class="project-link">Staff Interface →</a>
+        <a href="https://repair-lifecycle-demo.onrender.com/analytics.html" target="_blank" class="project-link">Analytics &rarr;</a>
+        <a href="https://repair-lifecycle-demo.onrender.com/internal/intake" target="_blank" class="project-link">Staff Interface &rarr;</a>
       </div>
     </div>
 
-    <!-- RecapAI -->
     <div class="project-card blue">
-      <div class="project-num">04 — CONSUMER AI</div>
+      <div class="project-num">04 &mdash; CONSUMER AI</div>
       <div class="project-title">RecapAI</div>
       <div class="project-subtitle">AI-Powered Entertainment Catch-Up Tool</div>
-      <p class="project-desc">
-        Miss a season? Get back up to speed on any TV show, movie, or sports
-        storyline with AI-generated recaps that give you exactly what you need
-        to rejoin the conversation — without the spoilers you didn't ask for.
-      </p>
+      <p class="project-desc">Miss a season? Get back up to speed on any TV show, movie, or sports storyline with AI-generated recaps that give you exactly what you need to rejoin the conversation &mdash; without the spoilers you didn&rsquo;t ask for.</p>
       <ul class="project-features">
-        <li>Multi-API integration — Claude, TMDB, YouTube</li>
+        <li>Multi-API integration &mdash; Claude, TMDB, YouTube</li>
         <li>Structured recap generation with spoiler control</li>
         <li>Android APK available</li>
         <li>First live AI application built before the Shield product family</li>
       </ul>
       <div class="project-stack">
-        <span class="stack-tag">Claude API</span>
-        <span class="stack-tag">TMDB API</span>
-        <span class="stack-tag">YouTube API</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">Android APK</span>
+        <span class="stack-tag">Claude API</span><span class="stack-tag">TMDB API</span><span class="stack-tag">YouTube API</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Android APK</span>
       </div>
       <div class="project-links">
-        <a href="https://recap-ai-rosy.vercel.app/" target="_blank" class="project-link">Live Demo →</a>
+        <a href="https://recap-ai-rosy.vercel.app/" target="_blank" class="project-link">Live Demo &rarr;</a>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- BACKGROUND -->
 <section id="background">
   <div class="section-label">Background</div>
   <div class="section-title">Where It Comes From</div>
   <p class="section-sub">The combination of deep operational experience and the ability to build is genuinely rare.</p>
-
   <div class="bg-grid">
-    <div class="bg-card">
-      <div class="bg-icon">🚛</div>
-      <div class="bg-title">Solar Transport — 10 Years</div>
-      <p class="bg-text">Senior Regional Operations Manager. 9 terminals, 7 states, up to 150 drivers. Reduced service failures from 800+ to under 100. 19 consecutive fleet safety awards. $500K+ in prevented penalties annually.</p>
-    </div>
-    <div class="bg-card">
-      <div class="bg-icon">⚙️</div>
-      <div class="bg-title">Automotive Circuit Solutions</div>
-      <p class="bg-text">Operations Manager. Built a complete warranty and repair lifecycle management system from scratch — dual interfaces, 3 custom APIs, barcode scanning, automated emails, analytics dashboard. Months of development, deployed solo.</p>
-    </div>
-    <div class="bg-card">
-      <div class="bg-icon">🧠</div>
-      <div class="bg-title">AI Business Systems</div>
-      <p class="bg-text">Founder. Building the Shield product family — AI-powered vertical tools for SMBs and fleet operations. HR Shield, DOT Shield, and RepairFlow all live. DOT Shield Phase 2 ELD integration in development.</p>
-    </div>
-    <div class="bg-card">
-      <div class="bg-icon">🎓</div>
-      <div class="bg-title">Education</div>
-      <p class="bg-text">Full Stack Web Development Certificate — University of Texas at Austin. Class A CDL holder.</p>
-    </div>
-    <div class="bg-card">
-      <div class="bg-icon">📍</div>
-      <div class="bg-title">Location & Availability</div>
-      <p class="bg-text">Based in Republic, MO (Springfield area). Open to remote roles in fleet tech, AI product development, and operations technology. Available for consulting and fractional engagements.</p>
-    </div>
-    <div class="bg-card">
-      <div class="bg-icon">🔭</div>
-      <div class="bg-title">What I'm Building Toward</div>
-      <p class="bg-text">A PM or product-adjacent role at a fleet technology company where operational domain expertise and the ability to build are both valued. Or the right partner to scale DOT Shield's ELD integration into something bigger.</p>
-    </div>
+    <div class="bg-card"><div class="bg-icon">&#x1F69B;</div><div class="bg-title">Solar Transport &mdash; 10 Years</div><p class="bg-text">Senior Regional Operations Manager. 9 terminals, 7 states, up to 150 drivers. Reduced service failures from 800+ to under 100. 19 consecutive fleet safety awards. $500K+ in prevented penalties annually.</p></div>
+    <div class="bg-card"><div class="bg-icon">&#x2699;&#xFE0F;</div><div class="bg-title">Automotive Circuit Solutions</div><p class="bg-text">Operations Manager. Built a complete warranty and repair lifecycle management system from scratch &mdash; dual interfaces, 3 custom APIs, barcode scanning, automated emails, analytics dashboard. Months of development, deployed solo.</p></div>
+    <div class="bg-card"><div class="bg-icon">&#x1F9E0;</div><div class="bg-title">AI Business Systems</div><p class="bg-text">Founder. Building the Shield product family &mdash; AI-powered vertical tools for SMBs and fleet operations. HR Shield, DOT Shield, and RepairFlow all live. DOT Shield Phase 2 ELD integration in development.</p></div>
+    <div class="bg-card"><div class="bg-icon">&#x1F393;</div><div class="bg-title">Education</div><p class="bg-text">Full Stack Web Development Certificate &mdash; University of Texas at Austin. Class A CDL holder.</p></div>
+    <div class="bg-card"><div class="bg-icon">&#x1F4CD;</div><div class="bg-title">Location &amp; Availability</div><p class="bg-text">Based in Republic, MO (Springfield area). Open to remote roles in fleet tech, AI product development, and operations technology. Available for consulting and fractional engagements.</p></div>
+    <div class="bg-card"><div class="bg-icon">&#x1F52D;</div><div class="bg-title">What I&rsquo;m Building Toward</div><p class="bg-text">A PM or product-adjacent role at a fleet technology company where operational domain expertise and the ability to build are both valued. Or the right partner to scale DOT Shield&rsquo;s ELD integration into something bigger.</p></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
     <div class="section-label" style="text-align:center;">Contact</div>
-    <div class="section-title" style="font-size:2.5rem;">Let's Talk</div>
-    <p style="color:rgba(245,244,240,0.55);font-size:1rem;line-height:1.7;margin-top:16px;">
-      Whether you're building something in the fleet tech space, need a fractional
-      ops brain, or just want to see a live demo — I'm easy to reach.
-    </p>
+    <div class="section-title" style="font-size:2.5rem;">Let&rsquo;s Talk</div>
+    <p style="color:rgba(245,244,240,0.55);font-size:1rem;line-height:1.7;margin-top:16px;">Whether you&rsquo;re building something in the fleet tech space, need a fractional ops brain, or just want to see a live demo &mdash; I&rsquo;m easy to reach.</p>
     <div class="contact-links">
-      <a href="mailto:jwrobertson81@gmail.com" class="contact-link">
-        ✉ jwrobertson81@gmail.com
-      </a>
-      <a href="tel:4174026365" class="contact-link">
-        📞 (417) 402-6365
-      </a>
-      <a href="https://www.linkedin.com/in/jesse-robertson-29b14b33" target="_blank" class="contact-link">
-        in LinkedIn
-      </a>
+      <a href="mailto:jwrobertson81@gmail.com" class="contact-link">&#x2709; jwrobertson81@gmail.com</a>
+      <a href="tel:4174026365" class="contact-link">&#x1F4DE; (417) 402-6365</a>
+      <a href="https://www.linkedin.com/in/jesse-robertson-29b14b33" target="_blank" class="contact-link">in LinkedIn</a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2026 Jesse Robertson · AI Business Systems</p>
-  <p>Built with Claude API · Deployed on Vercel</p>
+  <p>&copy; 2026 Jesse Robertson &middot; AI Business Systems</p>
+  <p>Built with Claude API &middot; Deployed on Vercel</p>
 </footer>
 
 </body>
