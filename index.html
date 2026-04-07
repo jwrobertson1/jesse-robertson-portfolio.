@@ -64,6 +64,7 @@
     .project-card.orange { --accent: var(--orange); }
     .project-card.purple { --accent: var(--purple); }
     .project-card.blue { --accent: #2a7ae2; }
+    .project-card.teal { --accent: #2ab8a0; }
     .project-num { font-family: "Syne", sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; color: var(--accent); margin-bottom: 20px; }
     .project-title { font-family: "Syne", sans-serif; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
     .project-subtitle { font-size: 0.8rem; color: var(--accent); font-weight: 500; margin-bottom: 16px; letter-spacing: 0.5px; }
@@ -87,8 +88,8 @@
     .contact-links { display: flex; justify-content: center; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
     .contact-link { display: flex; align-items: center; gap: 8px; text-decoration: none; color: rgba(245,244,240,0.6); font-size: 0.85rem; font-weight: 500; padding: 12px 20px; border: 1px solid var(--border); border-radius: 6px; transition: color 0.2s, border-color 0.2s; }
     .contact-link:hover { color: var(--white); border-color: rgba(245,244,240,0.3); }
-    .contact-link.fiverr { background: #1dbf73; color: #fff; border-color: #1dbf73; font-weight: 600; }
-    .contact-link.fiverr:hover { background: #19a463; border-color: #19a463; color: #fff; }
+    .contact-link.fiverr { background: var(--green); color: #fff; border-color: var(--green); font-weight: 600; }
+    .contact-link.fiverr:hover { background: var(--green-light); border-color: var(--green-light); color: #fff; }
     footer { padding: 32px 48px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
     footer p { font-size: 0.78rem; color: var(--gray); }
     .divider { width: 60px; height: 2px; background: var(--green-light); margin-bottom: 40px; }
@@ -139,7 +140,7 @@
   </div>
   <div class="hero-stats">
     <div class="stat-item"><div class="stat-num">17+</div><div class="stat-label">Years Ops</div></div>
-    <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Live Products</div></div>
+    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label">Live Products</div></div>
     <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Terminals Managed</div></div>
   </div>
 </section>
@@ -151,7 +152,7 @@
     <div class="about-text">
       <p>I spent <strong>10 years managing dispatch and fleet operations</strong> at Solar Transport &mdash; 9 terminals, 7 states, up to 150 drivers. I reduced service failures from 800+ per year to under 100 and built a safety culture that earned 19 consecutive fleet safety awards.</p>
       <p>Along the way I started solving operational problems with AI before most people knew what a prompt was. I built HR workflows, compliance systems, and reporting tools that replaced entire headcount. Then I decided to build products out of it.</p>
-      <p>Under <strong>AI Business Systems</strong>, I&rsquo;ve shipped HR Shield, DOT Shield, and RepairFlow &mdash; three AI-powered tools addressing real SMB pain points, all built and deployed solo. The DOT Shield concept includes a Phase 2 ELD integration that gives dispatchers real-time HOS answers in plain English &mdash; a product I believe has serious potential in the fleet management space.</p>
+      <p>Under <strong>AI Business Systems</strong>, I&rsquo;ve shipped HR Shield, DOT Shield, RepairFlow, RecapAI, and GigWinner &mdash; five AI-powered tools built and deployed solo. The DOT Shield concept includes a Phase 2 ELD integration that gives dispatchers real-time HOS answers in plain English &mdash; a product I believe has serious potential in the fleet management space.</p>
       <p>I hold a Full Stack certificate from UT Austin and build with Claude API, JavaScript, Node.js, Vercel, and Google Apps Script.</p>
     </div>
     <div class="about-skills">
@@ -169,7 +170,7 @@
 <section id="projects">
   <div class="section-label">Projects</div>
   <div class="section-title">Shipped &amp; Live</div>
-  <p class="section-sub">Four AI-powered products built and deployed solo under AI Business Systems.</p>
+  <p class="section-sub">Five AI-powered products built and deployed solo under AI Business Systems.</p>
   <div class="projects-grid">
 
     <div class="project-card orange">
@@ -202,7 +203,7 @@
         <li>AI-guided HR situation handling</li>
         <li>Generates ready-to-use documentation</li>
         <li>Covers terminations, write-ups, unemployment claims, OSHA postings</li>
-        <li>Freemium model &mdash; 5 free questions, then 7.99/month</li>
+        <li>Freemium model &mdash; 5 free questions, then $7.99/month</li>
         <li>Disclaimer modal and legal framing built in</li>
       </ul>
       <div class="project-stack">
@@ -239,18 +240,39 @@
       <div class="project-num">04 &mdash; CONSUMER AI</div>
       <div class="project-title">RecapAI</div>
       <div class="project-subtitle">AI-Powered Entertainment Catch-Up Tool</div>
-      <p class="project-desc">Miss a season? Get back up to speed on any TV show, movie, or sports storyline with AI-generated recaps that give you exactly what you need to rejoin the conversation &mdash; without the spoilers you didn&rsquo;t ask for.</p>
+      <p class="project-desc">Miss a season? Get back up to speed on any TV show with AI-generated recaps that give you exactly what you need to rejoin the conversation. Integrates with your Trakt watch history to know exactly where you left off.</p>
       <ul class="project-features">
-        <li>Multi-API integration &mdash; Claude, TMDB, YouTube</li>
-        <li>Structured recap generation with spoiler control</li>
-        <li>Android APK &mdash; full mobile deployment built and packaged independently</li>
-        <li>First live AI application built before the Shield product family</li>
+        <li>Multi-API integration &mdash; Claude, TMDB, YouTube, Trakt</li>
+        <li>Full season and episode range recap modes</li>
+        <li>Season tracking &mdash; get notified when new seasons drop</li>
+        <li>Freemium model &mdash; 3 free recaps, then $5.99 one-time unlock</li>
+        <li>Android APK packaged and deployed independently</li>
       </ul>
       <div class="project-stack">
-        <span class="stack-tag">Claude API</span><span class="stack-tag">TMDB API</span><span class="stack-tag">YouTube API</span><span class="stack-tag">JavaScript</span><span class="stack-tag">Android APK</span>
+        <span class="stack-tag">Claude API</span><span class="stack-tag">Next.js</span><span class="stack-tag">TMDB API</span><span class="stack-tag">Trakt API</span><span class="stack-tag">Stripe</span><span class="stack-tag">Redis</span>
       </div>
       <div class="project-links">
         <a href="https://recap-ai-next.vercel.app" target="_blank" class="project-link">Live Demo &rarr;</a>
+      </div>
+    </div>
+
+    <div class="project-card teal">
+      <div class="project-num">05 &mdash; FREELANCE AI</div>
+      <div class="project-title">GigWinner</div>
+      <div class="project-subtitle">AI-Powered Upwork Job Matcher &amp; Proposal Generator</div>
+      <p class="project-desc">Freelancers waste hours scanning job boards and writing proposals that don&rsquo;t convert. GigWinner analyzes Upwork job postings against your profile, scores fit, and generates tailored proposals &mdash; so you spend time on the right gigs and win more of them.</p>
+      <ul class="project-features">
+        <li>AI job fit scoring &mdash; ranks opportunities against your skills and experience</li>
+        <li>One-click proposal generation tailored to each job posting</li>
+        <li>Saved profile system &mdash; your background always ready to go</li>
+        <li>Freemium model &mdash; free tier with daily limit, Starter and Pro plans via Stripe</li>
+        <li>Built in Next.js with Upwork API integration</li>
+      </ul>
+      <div class="project-stack">
+        <span class="stack-tag">Claude API</span><span class="stack-tag">Next.js</span><span class="stack-tag">Upwork API</span><span class="stack-tag">Stripe</span><span class="stack-tag">Vercel</span>
+      </div>
+      <div class="project-links">
+        <a href="https://gigwinner.vercel.app" target="_blank" class="project-link">Live Demo &rarr;</a>
       </div>
     </div>
 
@@ -264,7 +286,7 @@
   <div class="bg-grid">
     <div class="bg-card"><div class="bg-icon">&#x1F69B;</div><div class="bg-title">Solar Transport &mdash; 10 Years</div><p class="bg-text">Senior Regional Operations Manager. 9 terminals, 7 states, up to 150 drivers. Reduced service failures from 800+ to under 100. 19 consecutive fleet safety awards. $500K+ in prevented penalties annually.</p></div>
     <div class="bg-card"><div class="bg-icon">&#x2699;&#xFE0F;</div><div class="bg-title">Automotive Circuit Solutions</div><p class="bg-text">Operations Manager. Built a complete warranty and repair lifecycle management system from scratch &mdash; dual interfaces, 3 custom APIs, barcode scanning, automated emails, analytics dashboard. Months of development, deployed solo.</p></div>
-    <div class="bg-card"><div class="bg-icon">&#x1F9E0;</div><div class="bg-title">AI Business Systems</div><p class="bg-text">Founder. Building the Shield product family &mdash; AI-powered vertical tools for SMBs and fleet operations. HR Shield, DOT Shield, and RepairFlow all live. DOT Shield Phase 2 ELD integration in development.</p></div>
+    <div class="bg-card"><div class="bg-icon">&#x1F9E0;</div><div class="bg-title">AI Business Systems</div><p class="bg-text">Founder. Building the Shield product family &mdash; AI-powered vertical tools for SMBs and fleet operations. HR Shield, DOT Shield, RepairFlow, RecapAI, and GigWinner all live. DOT Shield Phase 2 ELD integration in development.</p></div>
     <div class="bg-card"><div class="bg-icon">&#x1F393;</div><div class="bg-title">Education</div><p class="bg-text">Professional Certificate in Full Stack Software Development: Building Scalable Cloud Applications &mdash; University of Texas at Austin (McCombs School of Business), December 2023. Associate&rsquo;s Degree, Business Administration &amp; Management &mdash; Ozarks Technical Community College, cum laude (3.6 GPA). Class A CDL holder.</p></div>
     <div class="bg-card"><div class="bg-icon">&#x1F4CD;</div><div class="bg-title">Location &amp; Availability</div><p class="bg-text">Based in Republic, MO (Springfield area). Open to remote roles in fleet tech, AI product development, and operations technology. Available for consulting and fractional engagements.</p></div>
     <div class="bg-card"><div class="bg-icon">&#x1F52D;</div><div class="bg-title">What I&rsquo;m Building Toward</div><p class="bg-text">A PM or product-adjacent role at a fleet technology company where operational domain expertise and the ability to build are both valued. Or the right partner to scale DOT Shield&rsquo;s ELD integration into something bigger.</p></div>
@@ -277,7 +299,7 @@
     <div class="section-title" style="font-size:2.5rem;">Let&rsquo;s Talk</div>
     <p style="color:rgba(245,244,240,0.55);font-size:1rem;line-height:1.7;margin-top:16px;">Whether you&rsquo;re building something in the fleet tech space, need a fractional ops brain, or just want to see a live demo &mdash; I&rsquo;m easy to reach.</p>
     <div class="contact-links">
-      <a href="mailto:jwrobertson81@gmail.com" class="contact-link">&#x2709; jwrobertson81@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#97fde0e5f8f5f2e5e3e4f8f9afa6d7f0faf6fefbb9f4f8fa" class="contact-link">&#x2709; <span class="__cf_email__" data-cfemail="a3c9d4d1ccc1c6d1d7d0cccd9b92e3c4cec2cacf8dc0ccce">[email&#160;protected]</span></a>
       <a href="tel:4174026365" class="contact-link">&#x1F4DE; (417) 402-6365</a>
       <a href="https://www.linkedin.com/in/jesse-robertson-29b14b33" target="_blank" class="contact-link">in LinkedIn</a>
       <a href="https://www.fiverr.com/s/8zq1d3v" target="_blank" class="contact-link fiverr">&#x1F4BC; Hire Me on Fiverr</a>
@@ -286,9 +308,4 @@
 </section>
 
 <footer>
-  <p>&copy; 2025 Jesse Robertson &mdash; AI Business Systems</p>
-  <p>Republic, MO &middot; jwrobertson81@gmail.com</p>
-</footer>
-
-</body>
-</html>
+  <p
